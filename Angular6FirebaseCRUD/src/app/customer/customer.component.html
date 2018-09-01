@@ -1,3 +1,29 @@
-<p>
-  customer works!
-</p>
+<div class="row">
+  <div class="col-md-5">
+    <form [formGroup]="this.custService.form" (ngSubmit)="this.onSubmit()">
+      <input type="hidden" formControlName="$key">
+      <div class="form-group">
+        <label for="fullName">Full Name</label>
+        <input type="text" formControlName="fullName" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" formControlName="email" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="mobile">Mobile</label>
+        <input type="text" formControlName="mobile" class="form-control">
+      </div>
+      <div class="form-group">
+        <label for="location">Location</label>
+        <input type="text" formControlName="location" class="form-control">
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="submit">
+      </div>
+    </form>
+  </div>
+  <div class="col-md-7">
+    <app-customer-list></app-customer-list>
+  </div>
+</div>

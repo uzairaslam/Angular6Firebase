@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CustomerService} from '../shared/customer.service';
 
 @Component({
   selector: 'app-customer',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./customer.component.css']
 })
 export class CustomerComponent implements OnInit {
-
-  constructor() { }
+  custService: CustomerService;
+  constructor(private customerService: CustomerService) {
+    this.custService = customerService;
+  }
 
   ngOnInit() {
   }
+  onSubmit() {
+    if (this.custService.form.get('$key').value == null) {
 
+    }
+  }
 }
