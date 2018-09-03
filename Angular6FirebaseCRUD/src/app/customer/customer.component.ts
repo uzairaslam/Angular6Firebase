@@ -11,12 +11,19 @@ export class CustomerComponent implements OnInit {
   constructor(private customerService: CustomerService) {
     this.custService = customerService;
   }
+  submitted: boolean;
+  formControls = this.customerService.form.controls;
 
   ngOnInit() {
   }
   onSubmit() {
-    if (this.custService.form.get('$key').value == null) {
+    this.submitted = true;
+    if (this.custService.form.valid) {
 
+      this.submitted = false;
     }
+    // if (this.custService.form.get('$key').value == null) {
+
+    // }
   }
 }
