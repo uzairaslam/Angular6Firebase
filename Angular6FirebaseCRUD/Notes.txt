@@ -1,0 +1,2 @@
++ angularfire2@5.0.0-rc.12
++ firebase@5.4.2
