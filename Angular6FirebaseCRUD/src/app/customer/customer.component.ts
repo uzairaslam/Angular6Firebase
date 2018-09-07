@@ -28,6 +28,7 @@ export class CustomerComponent implements OnInit {
         this.showSuccessMessage = false;
       }, 3000);
       this.submitted = false;
+      this.custService.form.reset();
     }
   }
 }
