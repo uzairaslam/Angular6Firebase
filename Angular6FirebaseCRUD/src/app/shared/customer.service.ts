@@ -31,4 +31,8 @@ export class CustomerService {
       location: customer.location
     });
   }
+
+  populateForm(customer) {
+    this.form.setValue(customer);
+  }
 }

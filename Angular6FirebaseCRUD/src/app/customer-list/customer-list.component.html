@@ -11,7 +11,7 @@
       <td>{{customer.email}}</td>
       <td>{{customer.mobile}}</td>
       <td>
-        <button class="btn btn-outline-info btn-sm">Edit</button>
+        <button class="btn btn-outline-info btn-sm" (click)="this.customerService.populateForm(customer)">Edit</button>
         <button class="btn btn-outline-danger btn-sm">Delete</button>
       </td>
     </tr>
