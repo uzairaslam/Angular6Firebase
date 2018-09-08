@@ -44,4 +44,8 @@ export class CustomerService {
       location: customer.location
     });
   }
+
+  deleteCustomer($key) {
+    this.customerList.remove($key);
+  }
 }

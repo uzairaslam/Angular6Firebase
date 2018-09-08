@@ -11,6 +11,7 @@ export class CustomerListComponent implements OnInit {
 
   constructor(private customerService: CustomerService) { }
   customerArray = [];
+  showDeletMessage: boolean;
 
   ngOnInit() {
     this.customerService.getCustomers().subscribe(
@@ -22,5 +23,15 @@ export class CustomerListComponent implements OnInit {
           };
         });
       });
+  }
+
+  onDelete($key) {
+    if (confirm('Are you sure to delete this record?')) {
+      this.customerService.deleteCustomer($key);
+      this.showDeletMessage = true;
+      setTimeout(() => {
+        this.showDeletMessage = false;
+      }, 3000);
+    }
   }
 }
