@@ -12,6 +12,7 @@ export class CustomerListComponent implements OnInit {
   constructor(private customerService: CustomerService) { }
   customerArray = [];
   showDeletMessage: boolean;
+  searchText = '';
 
   ngOnInit() {
     this.customerService.getCustomers().subscribe(
@@ -33,5 +34,9 @@ export class CustomerListComponent implements OnInit {
         this.showDeletMessage = false;
       }, 3000);
     }
+  }
+
+  filterCondition(customer) {
+    return customer.fullName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
   }
 }
